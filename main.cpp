@@ -15,5 +15,6 @@ int main()
 {
     KsiazkaAdresowa ksiazka;
     ksiazka.rejestracjaUzytkownika();
+    ksiazka.logowanieUzytkownika();
     return 0;
 }

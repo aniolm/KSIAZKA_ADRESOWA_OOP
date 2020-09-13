@@ -22,6 +22,7 @@ class KsiazkaAdresowa
         string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
         bool czyPlikJestPusty(fstream &plikTekstowy);
         string konwerjsaIntNaString(int liczba);
+        int logowanieUzytkownika();
 
 
     protected:
