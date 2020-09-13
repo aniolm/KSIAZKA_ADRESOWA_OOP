@@ -1,11 +1,44 @@
 #include "Uzytkownik.h"
 
-Uzytkownik::Uzytkownik()
+void Uzytkownik::ustawId(int noweId)
 {
-    //ctor
+    id = noweId;
 }
 
+void Uzytkownik::ustawLogin(string nowyLogin)
+{
+    login = nowyLogin;
+}
+
+void Uzytkownik::ustawHaslo(string noweHaslo)
+{
+    haslo = noweHaslo;
+}
+
+int Uzytkownik::pobierzId()
+{
+    return id;
+}
+
+string Uzytkownik::pobierzLogin()
+{
+    return login;
+}
+
+string Uzytkownik::pobierzHaslo()
+{
+    return haslo;
+}
+
+Uzytkownik::Uzytkownik()
+{
+    id = 0;
+    login = "";
+    haslo = "";
+}
+/*
 Uzytkownik::~Uzytkownik()
 {
     //dtor
 }
+*/
