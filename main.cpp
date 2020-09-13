@@ -1,9 +1,20 @@
 #include <iostream>
+#include <fstream>
+#include <windows.h>
+#include <vector>
+#include <algorithm>
+#include <sstream>
+
+#include "KsiazkaAdresowa.h"
+#include "Uzytkownik.h"
+#include "Adresat.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    KsiazkaAdresowa ksiazka;
+    ksiazka.rejestracjaUzytkownika();
+    ksiazka.logowanieUzytkownika();
     return 0;
 }
