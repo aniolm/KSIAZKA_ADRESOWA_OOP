@@ -1,5 +1,12 @@
 #include "Uzytkownik.h"
 
+Uzytkownik::Uzytkownik()
+{
+    id = 0;
+    login = "";
+    haslo = "";
+}
+
 void Uzytkownik::ustawId(int noweId)
 {
     id = noweId;
@@ -30,12 +37,7 @@ string Uzytkownik::pobierzHaslo()
     return haslo;
 }
 
-Uzytkownik::Uzytkownik()
-{
-    id = 0;
-    login = "";
-    haslo = "";
-}
+
 /*
 Uzytkownik::~Uzytkownik()
 {
