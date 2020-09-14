@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include "Uzytkownik.h"
+#include "Adresat.h"
 #include <vector>
 
 using namespace std;
@@ -31,6 +32,10 @@ class KsiazkaAdresowa
         char wybierzOpcjeZMenuGlownego();
         char wybierzOpcjeZMenuUzytkownika();
         char wczytajZnak();
+        int dodajAdresata();
+        Adresat podajDaneNowegoAdresata();
+        void dopiszAdresataDoPliku(Adresat adresat);
+        string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
 
 
@@ -39,7 +44,7 @@ class KsiazkaAdresowa
     private:
 
     std::vector <Uzytkownik> uzytkownicy;
-//    std::vector <Adresat> adresaci;
+    std::vector <Adresat> adresaci;
 
     int idZalogowanegoUzytkownika;
     int idOstatniegoAdresata;

@@ -55,7 +55,7 @@ int main()
             switch (wybor)
             {
             case '1':
-                //ksiazka.ustawIdOstatniegoAdresata(dodajAdresata()) ;
+                ksiazka.ustawIdOstatniegoAdresata(ksiazka.dodajAdresata()) ;
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);
