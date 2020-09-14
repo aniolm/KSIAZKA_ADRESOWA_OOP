@@ -13,6 +13,11 @@ class KsiazkaAdresowa
     public:
         KsiazkaAdresowa();
         //virtual ~KsiazkaAdresowa();
+        void ustawIdZalogowanegoUzytkownika(int noweId);
+        int pobierzIdZalogowanegoUzytkownika();
+        void ustawIdOstatniegoAdresata(int noweId);
+        int pobierzIdOstatniegoAdresata();
+
         void rejestracjaUzytkownika();
         Uzytkownik podajDaneNowegoUzytkownika();
         int pobierzIdNowegoUzytkownika();
@@ -23,6 +28,10 @@ class KsiazkaAdresowa
         bool czyPlikJestPusty(fstream &plikTekstowy);
         string konwerjsaIntNaString(int liczba);
         int logowanieUzytkownika();
+        char wybierzOpcjeZMenuGlownego();
+        char wybierzOpcjeZMenuUzytkownika();
+        char wczytajZnak();
+
 
 
     protected:
