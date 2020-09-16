@@ -20,7 +20,7 @@ int main()
 
     while (true)
     {
-        if (ksiazka.pobierzIdZalogowanegoUzytkownika() == 0)
+        if (ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == 0)
         {
             wybor = ksiazka.wybierzOpcjeZMenuGlownego();
 
@@ -30,7 +30,7 @@ int main()
                 ksiazka.rejestracjaUzytkownika();
                 break;
             case '2':
-                ksiazka.ustawIdZalogowanegoUzytkownika(ksiazka.logowanieUzytkownika());
+                ksiazka.uzytkownikManager.ustawIdZalogowanegoUzytkownika(ksiazka.uzytkownikManager.logowanieUzytkownika());
                 break;
             case '9':
                 exit(0);
@@ -55,7 +55,7 @@ int main()
             switch (wybor)
             {
             case '1':
-                ksiazka.ustawIdOstatniegoAdresata(ksiazka.dodajAdresata()) ;
+                //ksiazka.ustawIdOstatniegoAdresata(ksiazka.dodajAdresata()) ;
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);
@@ -77,7 +77,7 @@ int main()
                 //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
             case '8':
-                ksiazka.ustawIdZalogowanegoUzytkownika(0);
+                ksiazka.uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
                 //adresaci.clear();
                 break;
             }
