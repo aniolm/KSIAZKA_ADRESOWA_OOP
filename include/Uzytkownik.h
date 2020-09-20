@@ -16,12 +16,11 @@ class Uzytkownik
         string pobierzLogin();
         string pobierzHaslo();
 
-
     private:
 
-    int id ;
-    string login;
-    string haslo;
+        int id ;
+        string login;
+        string haslo;
 };
 
 #endif // UZYTKOWNIK_H

@@ -30,7 +30,7 @@ int main()
                 ksiazka.rejestracjaUzytkownika();
                 break;
             case '2':
-                ksiazka.uzytkownikManager.ustawIdZalogowanegoUzytkownika(ksiazka.uzytkownikManager.logowanieUzytkownika());
+                ksiazka.uzytkownikManager.ustawIdZalogowanegoUzytkownika(ksiazka.logowanieUzytkownika());
                 break;
             case '9':
                 exit(0);
@@ -55,7 +55,7 @@ int main()
             switch (wybor)
             {
             case '1':
-                //ksiazka.ustawIdOstatniegoAdresata(ksiazka.dodajAdresata()) ;
+                ksiazka.adresatManager.ustawIdOstatniegoAdresata(ksiazka.dodajAdresata(ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika())) ;
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);

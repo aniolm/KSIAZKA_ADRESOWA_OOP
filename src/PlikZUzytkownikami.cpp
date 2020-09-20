@@ -15,7 +15,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
 
-        if (czyPlikJestPusty(plikTekstowy) == true)
+        if (metodyPomocniczne.czyPlikJestPusty(plikTekstowy) == true)
         {
             plikTekstowy << liniaZDanymiUzytkownika;
         }
@@ -30,19 +30,10 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 }
 
 
-bool PlikZUzytkownikami::czyPlikJestPusty(fstream &plikTekstowy)
-{
-    plikTekstowy.seekg(0, ios::end);
-    if (plikTekstowy.tellg() == 0)
-        return true;
-    else
-        return false;
-}
-
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
-    MetodyPomocniczne metodyPomocniczne;
+
     liniaZDanymiUzytkownika += metodyPomocniczne.konwerjsaIntNaString(uzytkownik.pobierzId())+ '|';
     liniaZDanymiUzytkownika += uzytkownik.pobierzLogin() + '|';
     liniaZDanymiUzytkownika += uzytkownik.pobierzHaslo() + '|';
