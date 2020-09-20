@@ -14,13 +14,13 @@ class PlikZUzytkownikami
         PlikZUzytkownikami();
         void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
 
-
-
-
     private:
+
+        MetodyPomocniczne metodyPomocniczne;
         string nazwaPlikuZUzytkownikami;
+
         string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-        bool czyPlikJestPusty(fstream &plikTekstowy);
+
 };
 
 #endif // PLIKZUZYTKOWNIKAMI_H

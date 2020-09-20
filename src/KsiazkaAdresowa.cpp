@@ -1,31 +1,20 @@
 #include "KsiazkaAdresowa.h"
 
 
-KsiazkaAdresowa::KsiazkaAdresowa()
-{
-
-    nazwaPlikuZAdresatami = "Adresaci.txt";
-    nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
-
-    idOstatniegoAdresata=0;
-    idUsunietegoAdresata=0;
-}
-/*KsiazkaAdresowa::~KsiazkaAdresowa()
-{
-    //dtor
-}
-*/
-
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikManager.rejestracjaUzytkownika();
 }
 
-void KsiazkaAdresowa::logowanieUzytkownika()
+int KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikManager.logowanieUzytkownika();
 }
 
+int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika)
+{
+    adresatManager.dodajAdresata(idZalogowanegoUzytkownika);
+}
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
@@ -68,17 +57,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 }
 
 
-/*
-void KsiazkaAdresowa::ustawIdOstatniegoAdresata(int noweId)
-{
-    idOstatniegoAdresata = noweId;
-}
 
-int KsiazkaAdresowa::pobierzIdOstatniegoAdresata()
-{
-    return idOstatniegoAdresata;
-}
-*/
 char KsiazkaAdresowa::wczytajZnak()
 {
     string wejscie = "";
@@ -97,87 +76,3 @@ char KsiazkaAdresowa::wczytajZnak()
     }
     return znak;
 }
-/*
-void KsiazkaAdresowa::dopiszAdresataDoPliku(Adresat adresat)
-{
-    string liniaZDanymiAdresata = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
-
-    if (plikTekstowy.good() == true)
-    {
-        liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-
-        if (czyPlikJestPusty(plikTekstowy) == true)
-        {
-            plikTekstowy << liniaZDanymiAdresata;
-        }
-        else
-        {
-            plikTekstowy << endl << liniaZDanymiAdresata ;
-        }
-    }
-    else
-    {
-        cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
-    }
-    plikTekstowy.close();
-    system("pause");
-}
-
-int KsiazkaAdresowa::dodajAdresata()
-{
-    Adresat adresat;
-
-    system("cls");
-    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata();
-
-    adresaci.push_back(adresat);
-    dopiszAdresataDoPliku(adresat);
-
-    return ++idOstatniegoAdresata;
-}
-
-Adresat KsiazkaAdresowa::podajDaneNowegoAdresata()
-{
-    Adresat adresat;
-
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
-
-    cout << "Podaj imie: ";
-    adresat.ustawImie(wczytajLinie());
-    //adresat.imie = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.imie);
-
-    cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko(wczytajLinie());
-    //adresat.nazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.nazwisko);
-
-    cout << "Podaj numer telefonu: ";
-    adresat.ustawNumerTelefonu(wczytajLinie());
-
-    cout << "Podaj email: ";
-    adresat.ustawEmail(wczytajLinie());
-
-    cout << "Podaj adres: ";
-    adresat.ustawAdres(wczytajLinie());
-
-    return adresat;
-}
-
-string KsiazkaAdresowa::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
-{
-    string liniaZDanymiAdresata = "";
-
-    liniaZDanymiAdresata += konwerjsaIntNaString(adresat.pobierzId()) + '|';
-    liniaZDanymiAdresata += konwerjsaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
-    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
-    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
-    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
-    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
-    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
-
-    return liniaZDanymiAdresata;
-}
-*/

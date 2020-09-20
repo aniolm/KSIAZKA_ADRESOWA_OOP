@@ -1,11 +1,5 @@
 #include "MetodyPomocniczne.h"
 
-MetodyPomocniczne::MetodyPomocniczne()
-{
-    //ctor
-}
-
-
 string MetodyPomocniczne::konwerjsaIntNaString(int liczba)
 {
     ostringstream ss;
@@ -19,4 +13,13 @@ string MetodyPomocniczne::wczytajLinie()
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
+}
+
+bool MetodyPomocniczne::czyPlikJestPusty(fstream &plikTekstowy)
+{
+    plikTekstowy.seekg(0, ios::end);
+    if (plikTekstowy.tellg() == 0)
+        return true;
+    else
+        return false;
 }

@@ -24,7 +24,7 @@ class UzytkownikManager
     private:
 
         int idZalogowanegoUzytkownika;
-        std::vector <Uzytkownik> uzytkownicy;
+        vector <Uzytkownik> uzytkownicy;
 
         int pobierzIdNowegoUzytkownika();
         bool czyIstniejeLogin(string login);
