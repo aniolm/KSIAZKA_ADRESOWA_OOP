@@ -5,6 +5,11 @@ UzytkownikManager::UzytkownikManager()
     idZalogowanegoUzytkownika = 0;
 }
 
+void UzytkownikManager::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
+
 void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int noweId)
 {
     idZalogowanegoUzytkownika = noweId;

@@ -19,10 +19,11 @@ class UzytkownikManager
         void ustawIdZalogowanegoUzytkownika(int noweId);
         int pobierzIdZalogowanegoUzytkownika();
         int logowanieUzytkownika();
+        void wczytajUzytkownikowZPliku();
 
 
     private:
-
+        PlikZUzytkownikami plikZUzytkownikami;
         int idZalogowanegoUzytkownika;
         vector <Uzytkownik> uzytkownicy;
 

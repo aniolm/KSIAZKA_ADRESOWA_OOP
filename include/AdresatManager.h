@@ -13,8 +13,8 @@ using namespace std;
 class AdresatManager
 {
     public:
-        AdresatManager();
 
+        AdresatManager();
         void ustawIdOstatniegoAdresata(int noweId);
         int pobierzIdOstatniegoAdresata();
 
