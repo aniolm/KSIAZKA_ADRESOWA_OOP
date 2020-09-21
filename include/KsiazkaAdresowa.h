@@ -18,6 +18,7 @@ class KsiazkaAdresowa
         UzytkownikManager uzytkownikManager;
         AdresatManager adresatManager;
 
+        KsiazkaAdresowa();
         void rejestracjaUzytkownika();
         int logowanieUzytkownika();
         int dodajAdresata(int idZalogowanegoUzytkownika);
