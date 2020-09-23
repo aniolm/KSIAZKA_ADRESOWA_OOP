@@ -25,6 +25,8 @@ class AdresatManager
         void usunVectorZAdresatami();
         void wyswietlWszystkichAdresatow();
         int znajdzIdOstatniegoAdresata();
+        void wyszukajAdresatowPoImieniu();
+        void wyszukajAdresatowPoNazwisku();
 
 
     private:
@@ -35,6 +37,7 @@ class AdresatManager
 
         Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
         void wyswietlDaneAdresata(Adresat adresat);
+        void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 
 };

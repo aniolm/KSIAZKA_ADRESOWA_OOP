@@ -25,9 +25,12 @@ class KsiazkaAdresowa
         void dodajAdresata();
         void wyswietlAdresatow();
         void wylogujUzytkownika();
+        void wyszukajAdresataPoImieniu();
+        void wyszukajAdresataPoNazwisku();
         char wybierzOpcjeZMenuGlownego();
         char wybierzOpcjeZMenuUzytkownika();
         char wczytajZnak();
+
 
     private:
 
