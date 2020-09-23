@@ -23,6 +23,7 @@ class KsiazkaAdresowa
         void logowanieUzytkownika();
         void wczytajAdresatowZPliku();
         void dodajAdresata();
+        void wyswietlAdresatow();
         void wylogujUzytkownika();
         char wybierzOpcjeZMenuGlownego();
         char wybierzOpcjeZMenuUzytkownika();

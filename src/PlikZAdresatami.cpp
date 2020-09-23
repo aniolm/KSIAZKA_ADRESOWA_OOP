@@ -74,13 +74,7 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(i
 
     plikTekstowy.close();
     return adresaci;
-    //if (daneOstaniegoAdresataWPliku != "")
-   // {
-     //   idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-     //   return idOstatniegoAdresata;
-   // }
-    //else
-        //return 0;
+
 }
 
 int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
