@@ -1,6 +1,6 @@
 #include "UzytkownikManager.h"
 
-UzytkownikManager::UzytkownikManager()
+UzytkownikManager::UzytkownikManager(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami)
 {
     idZalogowanegoUzytkownika = 0;
 }
@@ -22,7 +22,6 @@ int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 
 void UzytkownikManager::rejestracjaUzytkownika()
 {
-    PlikZUzytkownikami plikZUzytkownikami;
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
@@ -35,17 +34,17 @@ void UzytkownikManager::rejestracjaUzytkownika()
 Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
-    MetodyPomocniczne metodyPomocniczne;
+
     uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
 
     do
     {
         cout << endl << "Podaj login: ";
-        uzytkownik.ustawLogin(metodyPomocniczne.wczytajLinie());
+        uzytkownik.ustawLogin(MetodyPomocniczne::wczytajLinie());
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     cout << "Podaj haslo: ";
-    uzytkownik.ustawHaslo(metodyPomocniczne.wczytajLinie());
+    uzytkownik.ustawHaslo(MetodyPomocniczne::wczytajLinie());
 
     return uzytkownik;
 }
@@ -78,11 +77,11 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
 int UzytkownikManager::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
-    MetodyPomocniczne metodyPomocniczne;
+
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    login = metodyPomocniczne.wczytajLinie();
+    login = MetodyPomocniczne::wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
@@ -92,7 +91,7 @@ int UzytkownikManager::logowanieUzytkownika()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                haslo = metodyPomocniczne.wczytajLinie();
+                haslo = MetodyPomocniczne::wczytajLinie();
 
                 if (itr -> pobierzHaslo() == haslo)
                 {

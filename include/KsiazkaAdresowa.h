@@ -18,7 +18,7 @@ class KsiazkaAdresowa
         UzytkownikManager uzytkownikManager;
         AdresatManager adresatManager;
 
-        KsiazkaAdresowa();
+        KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami);
         void rejestracjaUzytkownika();
         int logowanieUzytkownika();
         int dodajAdresata(int idZalogowanegoUzytkownika);
