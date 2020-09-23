@@ -7,6 +7,8 @@
 #include "PlikZAdresatami.h"
 #include "MetodyPomocniczne.h"
 #include <vector>
+#include <algorithm>
+
 
 using namespace std;
 
@@ -21,6 +23,9 @@ class AdresatManager
         int dodajAdresata(int idZalogowanegoUzytkownika);
         bool czyVectorZAdresatamiPusty();
         void usunVectorZAdresatami();
+        void wyswietlWszystkichAdresatow();
+        int znajdzIdOstatniegoAdresata();
+
 
     private:
         PlikZAdresatami plikZAdresatami;
@@ -29,6 +34,7 @@ class AdresatManager
         int idUsunietegoAdresata;
 
         Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+        void wyswietlDaneAdresata(Adresat adresat);
 
 
 };

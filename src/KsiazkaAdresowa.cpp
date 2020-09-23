@@ -17,6 +17,7 @@ void KsiazkaAdresowa::logowanieUzytkownika()
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
     adresatManager.wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    adresatManager.ustawIdOstatniegoAdresata(adresatManager.znajdzIdOstatniegoAdresata());
 }
 
 void KsiazkaAdresowa::dodajAdresata()
@@ -29,6 +30,12 @@ void KsiazkaAdresowa::wylogujUzytkownika()
 {
     uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
     adresatManager.usunVectorZAdresatami();
+
+}
+
+void KsiazkaAdresowa::wyswietlAdresatow()
+{
+    adresatManager.wyswietlWszystkichAdresatow();
 
 }
 
