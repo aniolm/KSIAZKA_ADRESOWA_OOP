@@ -13,7 +13,7 @@ using namespace std;
 class UzytkownikManager
 {
     public:
-        UzytkownikManager();
+        UzytkownikManager(string nazwaPlikuZUzytkownikami);
         void rejestracjaUzytkownika();
         Uzytkownik podajDaneNowegoUzytkownika();
         void ustawIdZalogowanegoUzytkownika(int noweId);

@@ -10,9 +10,11 @@ class MetodyPomocniczne
 {
     public:
 
-        string konwerjsaIntNaString(int liczba);
-        string wczytajLinie();
-        bool czyPlikJestPusty(fstream &plikTekstowy);
+        static string konwerjsaIntNaString(int liczba);
+        static string wczytajLinie();
+        static bool czyPlikJestPusty(fstream &plikTekstowy);
+        static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+        static int konwersjaStringNaInt(string liczba);
 
     private:
 };

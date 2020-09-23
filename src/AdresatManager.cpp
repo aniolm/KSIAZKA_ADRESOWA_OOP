@@ -1,10 +1,11 @@
 #include "AdresatManager.h"
 
-AdresatManager::AdresatManager()
+AdresatManager::AdresatManager(string nazwaPlikuZAdresatami): plikZAdresatami(nazwaPlikuZAdresatami)
 {
     idOstatniegoAdresata=0;
     idUsunietegoAdresata=0;
 }
+
 
 void AdresatManager::ustawIdOstatniegoAdresata(int noweId)
 {
@@ -16,10 +17,14 @@ int AdresatManager::pobierzIdOstatniegoAdresata()
     return idOstatniegoAdresata;
 }
 
+void AdresatManager::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
+{
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
+
 int AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
-    PlikZAdresatami plikZAdresatami;
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
@@ -33,30 +38,31 @@ int AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
 Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
-    MetodyPomocniczne metodyPomocniczne;
 
     adresat.ustawId(++idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
-    adresat.ustawImie(metodyPomocniczne.wczytajLinie());
+    adresat.ustawImie(MetodyPomocniczne::wczytajLinie());
     //adresat.imie = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.imie);
 
     cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko(metodyPomocniczne.wczytajLinie());
+    adresat.ustawNazwisko(MetodyPomocniczne::wczytajLinie());
     //adresat.nazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.nazwisko);
 
     cout << "Podaj numer telefonu: ";
-    adresat.ustawNumerTelefonu(metodyPomocniczne.wczytajLinie());
+    adresat.ustawNumerTelefonu(MetodyPomocniczne::wczytajLinie());
 
     cout << "Podaj email: ";
-    adresat.ustawEmail(metodyPomocniczne.wczytajLinie());
+    adresat.ustawEmail(MetodyPomocniczne::wczytajLinie());
 
     cout << "Podaj adres: ";
-    adresat.ustawAdres(metodyPomocniczne.wczytajLinie());
+    adresat.ustawAdres(MetodyPomocniczne::wczytajLinie());
 
     return adresat;
 }
 
-
-
+bool AdresatManager::czyVectorZAdresatamiPusty()
+{
+    return adresaci.empty();
+}

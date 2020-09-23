@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazka;
+    KsiazkaAdresowa ksiazka("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
 
     //ksiazka.wczytajUzytkownikowZPliku();
@@ -44,11 +44,11 @@ int main()
         else
         {
 
-            //if (adresaci.empty() == true)
+            if (ksiazka.adresatManager.czyVectorZAdresatamiPusty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                //ksiazka.ustawIdOstatniegoAdresata(ksiazka.wczytajAdresatowZalogowanegoUzytkownikaZPliku());
+                ksiazka.adresatManager.wczytajAdresatowZPliku(ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
 
             wybor = ksiazka.wybierzOpcjeZMenuUzytkownika();
 

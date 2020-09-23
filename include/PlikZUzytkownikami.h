@@ -11,7 +11,7 @@ using namespace std;
 class PlikZUzytkownikami
 {
     public:
-        PlikZUzytkownikami();
+        PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI);
         void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
 
         vector <Uzytkownik> wczytajUzytkownikowZPliku();
@@ -19,8 +19,7 @@ class PlikZUzytkownikami
 
     private:
 
-        MetodyPomocniczne metodyPomocniczne;
-        string nazwaPlikuZUzytkownikami;
+        const string nazwaPlikuZUzytkownikami;
 
         string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 

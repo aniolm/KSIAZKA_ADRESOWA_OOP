@@ -23,3 +23,23 @@ bool MetodyPomocniczne::czyPlikJestPusty(fstream &plikTekstowy)
     else
         return false;
 }
+
+string MetodyPomocniczne::pobierzLiczbe(string tekst, int pozycjaZnaku)
+{
+    string liczba = "";
+    while(isdigit(tekst[pozycjaZnaku]) == true)
+    {
+        liczba += tekst[pozycjaZnaku];
+        pozycjaZnaku ++;
+    }
+    return liczba;
+}
+
+int MetodyPomocniczne::konwersjaStringNaInt(string liczba)
+{
+    int liczbaInt;
+    istringstream iss(liczba);
+    iss >> liczbaInt;
+
+    return liczbaInt;
+}
