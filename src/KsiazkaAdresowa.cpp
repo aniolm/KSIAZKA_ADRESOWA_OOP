@@ -39,6 +39,18 @@ void KsiazkaAdresowa::wyswietlAdresatow()
 
 }
 
+void KsiazkaAdresowa::wyszukajAdresataPoImieniu()
+{
+    adresatManager.wyszukajAdresatowPoImieniu();
+
+}
+
+void KsiazkaAdresowa::wyszukajAdresataPoNazwisku()
+{
+    adresatManager.wyszukajAdresatowPoNazwisku();
+
+}
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;

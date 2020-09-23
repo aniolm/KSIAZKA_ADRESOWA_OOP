@@ -56,10 +56,10 @@ int main()
                 ksiazka.dodajAdresata();
                 break;
             case '2':
-                //wyszukajAdresatowPoImieniu(adresaci);
+                ksiazka.wyszukajAdresataPoImieniu();
                 break;
             case '3':
-                //wyszukajAdresatowPoNazwisku(adresaci);
+                ksiazka.wyszukajAdresataPoNazwisku();
                 break;
             case '4':
                 ksiazka.wyswietlAdresatow();
