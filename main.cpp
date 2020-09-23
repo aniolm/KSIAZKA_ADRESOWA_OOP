@@ -30,7 +30,7 @@ int main()
                 ksiazka.rejestracjaUzytkownika();
                 break;
             case '2':
-                ksiazka.uzytkownikManager.ustawIdZalogowanegoUzytkownika(ksiazka.logowanieUzytkownika());
+                ksiazka.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -45,17 +45,15 @@ int main()
         {
 
             if (ksiazka.adresatManager.czyVectorZAdresatamiPusty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                ksiazka.adresatManager.wczytajAdresatowZPliku(ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+
+                ksiazka.wczytajAdresatowZPliku();
 
             wybor = ksiazka.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-                ksiazka.adresatManager.ustawIdOstatniegoAdresata(ksiazka.dodajAdresata(ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika())) ;
+                ksiazka.dodajAdresata();
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);
@@ -77,8 +75,8 @@ int main()
                 //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
             case '8':
-                ksiazka.uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
-                //adresaci.clear();
+                ksiazka.wylogujUzytkownika();
+
                 break;
             }
         }

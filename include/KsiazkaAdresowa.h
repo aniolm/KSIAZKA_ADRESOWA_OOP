@@ -20,8 +20,10 @@ class KsiazkaAdresowa
 
         KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami);
         void rejestracjaUzytkownika();
-        int logowanieUzytkownika();
-        int dodajAdresata(int idZalogowanegoUzytkownika);
+        void logowanieUzytkownika();
+        void wczytajAdresatowZPliku();
+        void dodajAdresata();
+        void wylogujUzytkownika();
         char wybierzOpcjeZMenuGlownego();
         char wybierzOpcjeZMenuUzytkownika();
         char wczytajZnak();

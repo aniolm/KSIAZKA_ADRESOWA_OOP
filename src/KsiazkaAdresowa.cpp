@@ -9,14 +9,27 @@ void KsiazkaAdresowa::rejestracjaUzytkownika()
     uzytkownikManager.rejestracjaUzytkownika();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika()
+void KsiazkaAdresowa::logowanieUzytkownika()
 {
-    uzytkownikManager.logowanieUzytkownika();
+    uzytkownikManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.logowanieUzytkownika());
 }
 
-int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika)
+void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
-    adresatManager.dodajAdresata(idZalogowanegoUzytkownika);
+    adresatManager.wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatManager.ustawIdOstatniegoAdresata(adresatManager.dodajAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika()));
+
+}
+
+void KsiazkaAdresowa::wylogujUzytkownika()
+{
+    uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
+    adresatManager.usunVectorZAdresatami();
+
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()

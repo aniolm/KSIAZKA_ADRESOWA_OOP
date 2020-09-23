@@ -66,3 +66,8 @@ bool AdresatManager::czyVectorZAdresatamiPusty()
 {
     return adresaci.empty();
 }
+
+void AdresatManager::usunVectorZAdresatami()
+{
+ adresaci.clear();
+}

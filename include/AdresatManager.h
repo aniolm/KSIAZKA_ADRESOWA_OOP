@@ -20,6 +20,7 @@ class AdresatManager
         int pobierzIdOstatniegoAdresata();
         int dodajAdresata(int idZalogowanegoUzytkownika);
         bool czyVectorZAdresatamiPusty();
+        void usunVectorZAdresatami();
 
     private:
         PlikZAdresatami plikZAdresatami;
