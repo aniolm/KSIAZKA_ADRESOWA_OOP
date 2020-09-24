@@ -43,7 +43,7 @@ int AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    return ++idOstatniegoAdresata;
+    return idOstatniegoAdresata;
 }
 
 Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
