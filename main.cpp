@@ -71,7 +71,7 @@ int main()
                 ksiazka.edytujAdresata();
                 break;
             case '7':
-                //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                ksiazka.zmianaHaslaUzytkownika();
                 break;
             case '8':
                 ksiazka.wylogujUzytkownika();

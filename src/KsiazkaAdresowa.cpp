@@ -22,6 +22,11 @@ void KsiazkaAdresowa::wylogujUzytkownika()
 
 }
 
+void KsiazkaAdresowa::zmianaHaslaUzytkownika()
+{
+    uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+}
+
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
     adresatManager.wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());

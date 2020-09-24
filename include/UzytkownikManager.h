@@ -20,6 +20,7 @@ class UzytkownikManager
         int pobierzIdZalogowanegoUzytkownika();
         int logowanieUzytkownika();
         void wczytajUzytkownikowZPliku();
+        void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 
 
     private:
