@@ -27,6 +27,7 @@ class AdresatManager
         int znajdzIdOstatniegoAdresata();
         void wyszukajAdresatowPoImieniu();
         void wyszukajAdresatowPoNazwisku();
+        void edytujAdresata();
 
 
     private:
@@ -38,6 +39,9 @@ class AdresatManager
         Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
         void wyswietlDaneAdresata(Adresat adresat);
         void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+        int podajIdWybranegoAdresata();
+        char wybierzOpcjeZMenuEdycja();
+
 
 
 };

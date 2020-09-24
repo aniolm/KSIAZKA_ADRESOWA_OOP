@@ -17,6 +17,8 @@ class MetodyPomocniczne
         static string pobierzLiczbe(string tekst, int pozycjaZnaku);
         static int konwersjaStringNaInt(string liczba);
         static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+        static int wczytajLiczbeCalkowita();
+        static char wczytajZnak();
 
     private:
 };

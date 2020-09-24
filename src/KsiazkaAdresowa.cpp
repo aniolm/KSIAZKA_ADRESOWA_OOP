@@ -14,6 +14,14 @@ void KsiazkaAdresowa::logowanieUzytkownika()
     uzytkownikManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.logowanieUzytkownika());
 }
 
+
+void KsiazkaAdresowa::wylogujUzytkownika()
+{
+    uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
+    adresatManager.usunVectorZAdresatami();
+
+}
+
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
     adresatManager.wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
@@ -26,12 +34,12 @@ void KsiazkaAdresowa::dodajAdresata()
 
 }
 
-void KsiazkaAdresowa::wylogujUzytkownika()
+void KsiazkaAdresowa::edytujAdresata()
 {
-    uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
-    adresatManager.usunVectorZAdresatami();
+    adresatManager.edytujAdresata();
 
 }
+
 
 void KsiazkaAdresowa::wyswietlAdresatow()
 {
@@ -63,7 +71,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     cout << "9. Koniec programu" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
-    wybor = wczytajZnak();
+    wybor = MetodyPomocniczne::wczytajZnak();
 
     return wybor;
 }
@@ -86,28 +94,11 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "8. Wyloguj sie" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
-    wybor = wczytajZnak();
+    wybor = MetodyPomocniczne::wczytajZnak();
 
     return wybor;
 }
 
 
 
-char KsiazkaAdresowa::wczytajZnak()
-{
-    string wejscie = "";
-    char znak  = {0};
 
-    while (true)
-    {
-        getline(cin, wejscie);
-
-        if (wejscie.length() == 1)
-        {
-            znak = wejscie[0];
-            break;
-        }
-        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
-    }
-    return znak;
-}
