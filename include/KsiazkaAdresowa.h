@@ -28,6 +28,7 @@ class KsiazkaAdresowa
         void wyszukajAdresataPoImieniu();
         void wyszukajAdresataPoNazwisku();
         void edytujAdresata();
+        void usunAdresata();
 
         char wybierzOpcjeZMenuGlownego();
         char wybierzOpcjeZMenuUzytkownika();
