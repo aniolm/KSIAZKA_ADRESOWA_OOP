@@ -40,6 +40,13 @@ void KsiazkaAdresowa::edytujAdresata()
 
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatManager.ustawIdUsunietegoAdresata(adresatManager.usunAdresata());
+    adresatManager.ustawIdOstatniegoAdresata(adresatManager.podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(adresatManager.pobierzIdOUsunietegoAdresata(),adresatManager.pobierzIdOstatniegoAdresata()));
+
+
+}
 
 void KsiazkaAdresowa::wyswietlAdresatow()
 {

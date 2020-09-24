@@ -20,6 +20,8 @@ class AdresatManager
         void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
         void ustawIdOstatniegoAdresata(int noweId);
         int pobierzIdOstatniegoAdresata();
+        void ustawIdUsunietegoAdresata(int noweId);
+        int pobierzIdOUsunietegoAdresata();
         int dodajAdresata(int idZalogowanegoUzytkownika);
         bool czyVectorZAdresatamiPusty();
         void usunVectorZAdresatami();
@@ -28,6 +30,8 @@ class AdresatManager
         void wyszukajAdresatowPoImieniu();
         void wyszukajAdresatowPoNazwisku();
         void edytujAdresata();
+        int usunAdresata();
+        int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
 
 
     private:
