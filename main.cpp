@@ -22,7 +22,7 @@ int main()
     {
         if (ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == 0)
         {
-            wybor = ksiazka.wybierzOpcjeZMenuGlownego();
+          wybor = ksiazka.wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {

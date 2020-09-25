@@ -14,17 +14,25 @@ void AdresatManager::ustawIdOstatniegoAdresata(int noweId)
 
 int AdresatManager::pobierzIdOstatniegoAdresata()
 {
+    idOstatniegoAdresata = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
     return idOstatniegoAdresata;
 }
 
 void AdresatManager::ustawIdUsunietegoAdresata(int noweId)
 {
-    idOstatniegoAdresata = noweId;
+    idUsunietegoAdresata = noweId;
 }
 
 int AdresatManager::pobierzIdOUsunietegoAdresata()
 {
-    return idOstatniegoAdresata;
+    return idUsunietegoAdresata;
+}
+
+int AdresatManager::znajdzIdOstatniegoAdresataWPliku()
+{
+    int idOstatniegoAdresataWPliku;
+    idOstatniegoAdresataWPliku = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
+    return idOstatniegoAdresataWPliku;
 }
 
 
@@ -122,7 +130,7 @@ void AdresatManager::znajdzIdOstatniegoAdresata()
 
     return;
 }
-*/
+
 
 int  AdresatManager::znajdzIdOstatniegoAdresata()
 {
@@ -139,7 +147,7 @@ int  AdresatManager::znajdzIdOstatniegoAdresata()
     }
     return idOstatniegoAdresata;
 }
-
+*/
 void AdresatManager::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
 {
     if (iloscAdresatow == 0)

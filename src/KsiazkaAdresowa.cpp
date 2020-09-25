@@ -30,7 +30,7 @@ void KsiazkaAdresowa::zmianaHaslaUzytkownika()
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
     adresatManager.wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
-    adresatManager.ustawIdOstatniegoAdresata(adresatManager.znajdzIdOstatniegoAdresata());
+    adresatManager.ustawIdOstatniegoAdresata(adresatManager.znajdzIdOstatniegoAdresataWPliku());
 }
 
 void KsiazkaAdresowa::dodajAdresata()

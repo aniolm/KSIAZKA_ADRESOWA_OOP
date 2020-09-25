@@ -26,7 +26,8 @@ class AdresatManager
         bool czyVectorZAdresatamiPusty();
         void usunVectorZAdresatami();
         void wyswietlWszystkichAdresatow();
-        int znajdzIdOstatniegoAdresata();
+        //int znajdzIdOstatniegoAdresata();
+        int znajdzIdOstatniegoAdresataWPliku();
         void wyszukajAdresatowPoImieniu();
         void wyszukajAdresatowPoNazwisku();
         void edytujAdresata();
