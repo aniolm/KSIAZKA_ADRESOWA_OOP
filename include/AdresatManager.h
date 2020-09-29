@@ -16,30 +16,27 @@ class AdresatManager
 {
     public:
 
-        AdresatManager(string nazwaPlikuZAdresatami);
-        void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
-        void ustawIdOstatniegoAdresata(int noweId);
-        int pobierzIdOstatniegoAdresata();
+        AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika);
         void ustawIdUsunietegoAdresata(int noweId);
-        int pobierzIdOUsunietegoAdresata();
-        int dodajAdresata(int idZalogowanegoUzytkownika);
+        int pobierzIdUsunietegoAdresata();
+        void dodajAdresata(int idZalogowanegoUzytkownika);
         bool czyVectorZAdresatamiPusty();
-        void usunVectorZAdresatami();
         void wyswietlWszystkichAdresatow();
         //int znajdzIdOstatniegoAdresata();
         int znajdzIdOstatniegoAdresataWPliku();
         void wyszukajAdresatowPoImieniu();
         void wyszukajAdresatowPoNazwisku();
         void edytujAdresata();
-        int usunAdresata();
-        int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
+        void usunAdresata();
+        int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idOstatniegoAdresata);
 
 
     private:
         PlikZAdresatami plikZAdresatami;
         vector <Adresat> adresaci;
-        int idOstatniegoAdresata;
         int idUsunietegoAdresata;
+
+
 
         Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
         void wyswietlDaneAdresata(Adresat adresat);

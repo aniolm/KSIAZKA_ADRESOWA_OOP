@@ -1,47 +1,28 @@
 #include "AdresatManager.h"
 
-AdresatManager::AdresatManager(string nazwaPlikuZAdresatami): plikZAdresatami(nazwaPlikuZAdresatami)
+AdresatManager::AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika): plikZAdresatami(nazwaPlikuZAdresatami)
 {
-    idOstatniegoAdresata=0;
+
     idUsunietegoAdresata=0;
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
 }
 
 
-void AdresatManager::ustawIdOstatniegoAdresata(int noweId)
-{
-    idOstatniegoAdresata = noweId;
-}
-
-int AdresatManager::pobierzIdOstatniegoAdresata()
-{
-    idOstatniegoAdresata = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
-    return idOstatniegoAdresata;
-}
 
 void AdresatManager::ustawIdUsunietegoAdresata(int noweId)
 {
     idUsunietegoAdresata = noweId;
 }
 
-int AdresatManager::pobierzIdOUsunietegoAdresata()
+int AdresatManager::pobierzIdUsunietegoAdresata()
 {
     return idUsunietegoAdresata;
 }
 
-int AdresatManager::znajdzIdOstatniegoAdresataWPliku()
-{
-    int idOstatniegoAdresataWPliku;
-    idOstatniegoAdresataWPliku = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
-    return idOstatniegoAdresataWPliku;
-}
 
 
-void AdresatManager::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
-{
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}
-
-int AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
+void AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     system("cls");
@@ -51,14 +32,14 @@ int AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    return idOstatniegoAdresata;
+    return;
 }
 
 Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 
-    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
@@ -84,11 +65,6 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 bool AdresatManager::czyVectorZAdresatamiPusty()
 {
     return adresaci.empty();
-}
-
-void AdresatManager::usunVectorZAdresatami()
-{
- adresaci.clear();
 }
 
 void AdresatManager::wyswietlWszystkichAdresatow()
@@ -313,7 +289,7 @@ char AdresatManager::wybierzOpcjeZMenuEdycja()
     return wybor;
 }
 
-int AdresatManager::usunAdresata()
+void AdresatManager::usunAdresata()
 {
     int idUsuwanegoAdresata = 0;
     int numerLiniiUsuwanegoAdresata = 0;
@@ -339,13 +315,16 @@ int AdresatManager::usunAdresata()
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
-                return idUsuwanegoAdresata;
+                idUsunietegoAdresata = idUsuwanegoAdresata;
+                plikZAdresatami.ustawIdOstatniegoAdresata(podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata()));
+
+                return;
             }
             else
             {
                 cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
                 system("pause");
-                return 0;
+                return;
             }
         }
     }
@@ -354,13 +333,19 @@ int AdresatManager::usunAdresata()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
-    return 0;
+    return;
+
+
 }
 
-int AdresatManager::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata)
+int AdresatManager::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata( int idOstatniegoAdresata)
 {
-    if (idUsuwanegoAdresata == idOstatniegoAdresata)
-        return plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
+    if (idUsunietegoAdresata == idOstatniegoAdresata)
+    {
+        plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
+        return plikZAdresatami.pobierzIdOstatniegoAdresata();
+    }
+
     else
         return idOstatniegoAdresata;
 }

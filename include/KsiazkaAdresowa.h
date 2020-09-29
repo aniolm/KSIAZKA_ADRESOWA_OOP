@@ -15,13 +15,13 @@ class KsiazkaAdresowa
 {
     public:
 
-        UzytkownikManager uzytkownikManager;
-        AdresatManager adresatManager;
+
 
         KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami);
+        ~KsiazkaAdresowa();
         void rejestracjaUzytkownika();
         void logowanieUzytkownika();
-        void wczytajAdresatowZPliku();
+        bool czyUzytkownikJestZalogowany();
         void dodajAdresata();
         void wyswietlAdresatow();
         void wylogujUzytkownika();
@@ -38,6 +38,9 @@ class KsiazkaAdresowa
 
     private:
 
+        UzytkownikManager uzytkownikManager;
+        AdresatManager *adresatManager;
+        const string NAZWA_PLIKU_Z_ADRESATAMI;
 
 
 };
