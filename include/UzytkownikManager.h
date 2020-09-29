@@ -18,9 +18,9 @@ class UzytkownikManager
         Uzytkownik podajDaneNowegoUzytkownika();
         void ustawIdZalogowanegoUzytkownika(int noweId);
         int pobierzIdZalogowanegoUzytkownika();
-        int logowanieUzytkownika();
+        void logowanieUzytkownika();
         void wczytajUzytkownikowZPliku();
-        void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+        void zmianaHaslaZalogowanegoUzytkownika();
 
 
     private:

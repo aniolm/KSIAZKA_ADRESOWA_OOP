@@ -3,6 +3,7 @@
 UzytkownikManager::UzytkownikManager(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami)
 {
     idZalogowanegoUzytkownika = 0;
+    wczytajUzytkownikowZPliku();
 }
 
 void UzytkownikManager::wczytajUzytkownikowZPliku()
@@ -74,7 +75,7 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
     return false;
 }
 
-int UzytkownikManager::logowanieUzytkownika()
+void UzytkownikManager::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
 
@@ -97,21 +98,22 @@ int UzytkownikManager::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
-void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";

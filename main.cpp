@@ -16,11 +16,10 @@ int main()
     KsiazkaAdresowa ksiazka("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
 
-    //ksiazka.wczytajUzytkownikowZPliku();
 
     while (true)
     {
-        if (ksiazka.uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == 0)
+        if (ksiazka.czyUzytkownikJestZalogowany() == false)
         {
           wybor = ksiazka.wybierzOpcjeZMenuGlownego();
 
@@ -44,9 +43,9 @@ int main()
         else
         {
 
-            if (ksiazka.adresatManager.czyVectorZAdresatamiPusty() == true)
+            //if (ksiazka.adresatManager.czyVectorZAdresatamiPusty() == true)
 
-                ksiazka.wczytajAdresatowZPliku();
+                //ksiazka.wczytajAdresatowZPliku();
 
             wybor = ksiazka.wybierzOpcjeZMenuUzytkownika();
 

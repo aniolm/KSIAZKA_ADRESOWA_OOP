@@ -11,18 +11,23 @@ using namespace std;
 class PlikZAdresatami
 {
     public:
-        PlikZAdresatami(string NAZWAPLIKUZADRESATAMI);
+        PlikZAdresatami(string nazwaPlikuZAdresatami);
+        int pobierzIdOstatniegoAdresata();
+        void ustawIdOstatniegoAdresata(int noweId);
+
         void dopiszAdresataDoPliku(Adresat adresat);
         vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
         void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
         int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
         void usunWybranaLinieWPliku(int numerUsuwanejLinii);
-        int pobierzZPlikuIdOstatniegoAdresata();
+        void pobierzZPlikuIdOstatniegoAdresata();
 
     private:
 
-        const string nazwaPlikuZAdresatami;
+        const string NAZWA_PLIKU_Z_ADRESATAMI;
         string nazwaTymczasowegoPlikuZAdresatami;
+        int idOstatniegoAdresata;
+
 
         string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
         Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
