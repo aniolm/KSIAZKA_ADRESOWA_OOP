@@ -40,7 +40,7 @@ class KsiazkaAdresowa
 
         UzytkownikManager uzytkownikManager;
         AdresatManager *adresatManager;
-        const string NAZWA_PLIKU_Z_ADRESATAMI;
+        string NAZWA_PLIKU_Z_ADRESATAMI;
 
 
 };

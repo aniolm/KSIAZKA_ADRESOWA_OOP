@@ -62,11 +62,6 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     return adresat;
 }
 
-bool AdresatManager::czyVectorZAdresatamiPusty()
-{
-    return adresaci.empty();
-}
-
 void AdresatManager::wyswietlWszystkichAdresatow()
 {
     system("cls");
@@ -316,7 +311,7 @@ void AdresatManager::usunAdresata()
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
                 idUsunietegoAdresata = idUsuwanegoAdresata;
-                plikZAdresatami.ustawIdOstatniegoAdresata(podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata()));
+                plikZAdresatami.podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata);
 
                 return;
             }
@@ -338,14 +333,4 @@ void AdresatManager::usunAdresata()
 
 }
 
-int AdresatManager::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata( int idOstatniegoAdresata)
-{
-    if (idUsunietegoAdresata == idOstatniegoAdresata)
-    {
-        plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
-        return plikZAdresatami.pobierzIdOstatniegoAdresata();
-    }
 
-    else
-        return idOstatniegoAdresata;
-}

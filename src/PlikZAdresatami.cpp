@@ -300,3 +300,16 @@ void PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     return;
 }
 
+void PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata( int idUsunietegoAdresata)
+{
+    if (idUsunietegoAdresata == idOstatniegoAdresata)
+    {
+        pobierzZPlikuIdOstatniegoAdresata();
+
+        return;
+    }
+
+    else
+
+        return;
+}

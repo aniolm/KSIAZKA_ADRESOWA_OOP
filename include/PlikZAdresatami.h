@@ -21,6 +21,7 @@ class PlikZAdresatami
         int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
         void usunWybranaLinieWPliku(int numerUsuwanejLinii);
         void pobierzZPlikuIdOstatniegoAdresata();
+        void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsunietegoAdresata);
 
     private:
 

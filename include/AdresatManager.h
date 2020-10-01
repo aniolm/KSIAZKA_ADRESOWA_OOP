@@ -20,15 +20,12 @@ class AdresatManager
         void ustawIdUsunietegoAdresata(int noweId);
         int pobierzIdUsunietegoAdresata();
         void dodajAdresata(int idZalogowanegoUzytkownika);
-        bool czyVectorZAdresatamiPusty();
         void wyswietlWszystkichAdresatow();
-        //int znajdzIdOstatniegoAdresata();
-        int znajdzIdOstatniegoAdresataWPliku();
         void wyszukajAdresatowPoImieniu();
         void wyszukajAdresatowPoNazwisku();
         void edytujAdresata();
         void usunAdresata();
-        int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idOstatniegoAdresata);
+
 
 
     private:

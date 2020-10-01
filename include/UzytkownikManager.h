@@ -15,7 +15,7 @@ class UzytkownikManager
     public:
         UzytkownikManager(string nazwaPlikuZUzytkownikami);
         void rejestracjaUzytkownika();
-        Uzytkownik podajDaneNowegoUzytkownika();
+
         void ustawIdZalogowanegoUzytkownika(int noweId);
         int pobierzIdZalogowanegoUzytkownika();
         void logowanieUzytkownika();
@@ -28,6 +28,7 @@ class UzytkownikManager
         int idZalogowanegoUzytkownika;
         vector <Uzytkownik> uzytkownicy;
 
+        Uzytkownik podajDaneNowegoUzytkownika();
         int pobierzIdNowegoUzytkownika();
         bool czyIstniejeLogin(string login);
 
